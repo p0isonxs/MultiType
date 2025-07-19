@@ -1,0 +1,225 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Staatliches";
+  src: url("/src/assets/fonts/Staatliches-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Animated background grid */
+@keyframes grid-move {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-50px) translateX(-50px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Floating particles */
+@keyframes float-1 {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.3;
+  }
+  33% {
+    transform: translateY(-10px) translateX(5px);
+    opacity: 0.7;
+  }
+  66% {
+    transform: translateY(5px) translateX(-3px);
+    opacity: 0.5;
+  }
+}
+
+@keyframes float-2 {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.2;
+  }
+  50% {
+    transform: translateY(-15px) translateX(-8px);
+    opacity: 0.6;
+  }
+}
+
+@keyframes float-3 {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateY(-5px) translateX(10px);
+    opacity: 0.8;
+  }
+  75% {
+    transform: translateY(8px) translateX(-5px);
+    opacity: 0.3;
+  }
+}
+
+/* Blinking dot */
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* Crypto highlight effect */
+@keyframes crypto-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+/* Circuit pattern animation */
+@keyframes circuit-pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.05);
+  }
+}
+
+/* CSS Classes */
+.glitch {
+  animation: glitch 1.5s infinite alternate;
+}
+
+.glitch-enhanced {
+  animation: glitch-enhanced 2s infinite;
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 10px #826df9, 0 0 20px #826df9, 0 0 30px #826df9;
+}
+
+.crypto-glow {
+  animation: border-pulse 3s infinite;
+}
+
+.blinking-dot {
+  color: #826df9;
+  animation: blink 2s infinite;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #826df9;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #826df9;
+}
+
+.particle-1 {
+  top: 20%;
+  left: 10%;
+  animation: float-1 6s infinite;
+}
+
+.particle-2 {
+  top: 60%;
+  right: 15%;
+  animation: float-2 8s infinite;
+}
+
+.particle-3 {
+  bottom: 30%;
+  left: 20%;
+  animation: float-3 7s infinite;
+}
+
+.particle-4 {
+  top: 40%;
+  right: 25%;
+  animation: float-1 5s infinite;
+}
+
+.particle-5 {
+  bottom: 20%;
+  left: 30%;
+  animation: float-2 6s infinite;
+}
+.particle-6 {
+  top: 10%;
+  right: 20%;
+  animation: float-3 8s infinite;
+}
+.particle-7 {
+  bottom: 40%;
+  left: 15%;
+  animation: float-1 7s infinite;
+}
+.particle-8 {
+  top: 30%;
+  right: 10%;
+  animation: float-2 5s infinite;
+}
+.particle-9 {
+  bottom: 50%;
+  left: 25%;
+  animation: float-3 6s infinite;
+}
+.particle-10 {
+  top: 20%;
+  right: 30%;
+  animation: float-1 8s infinite;
+}
+
+/* Autofill fix for Chrome: prevent white background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 9999s ease-in-out 0s !important;
+  -webkit-text-fill-color: #ffffff !important;
+  box-shadow: 0 0 0px 1000px #1f2937 inset !important; /* Tailwind bg-gray-800 */
+}
+
+/* ✅ ADD: Animation for chat */
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideUp {
+  animation: slideUp 0.3s ease-out;
+}
